@@ -1,0 +1,6 @@
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/duselbaer/msp430cmake.git
+[submodule "msp430lib"]
+	path = msp430lib
+	url = https://github.com/duselbaer/msp430lib.git
