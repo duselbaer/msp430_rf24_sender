@@ -1,3 +1,6 @@
+#include "NRF24L01/v1/NRF24L01.hpp"
+#include "NRF24L01/v1/driver/MSP430.hpp"
+
 #include "msp430lib/usci/v1/MSP430_USCI_UART.hpp"
 #include "msp430lib/usci/v1/MSP430_USCI_A0.hpp"
 
@@ -18,6 +21,11 @@ int main()
   msp430lib::Output<UART_HW> os(uart);
 
   // Initialize the NRF24L01 Device
+  typedef NRF24L01::driver::MSP430 NRF_COMM;
+  typedef NRF24L01::NRF24L01<NRF_COMM> NRF_HW;
+
+  NRF_COMM nrf_comm;
+  NRF_HW nrf;
 
   // Initialize the button
   P2DIR &= ~BIT3;

@@ -23,6 +23,12 @@ include_directories(
 )
 add_subdirectory(msp430lib)
 
+# RF24
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/RF24/include
+)
+add_subdirectory(RF24)
+
 add_executable(
   RF24Sender
     main.cpp
@@ -30,4 +36,5 @@ add_executable(
 target_link_libraries(
   RF24Sender
     msp430lib
+    RF24_MSP430
 )
